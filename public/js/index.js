@@ -1,5 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // --- MENU BURGER ---
+  // ACCUEIL DYNAMIQUE
+  const landing = document.getElementById("landing-page");
+  const enterBtn = document.getElementById("enter-site-btn");
+  const main = document.querySelector("main");
+  const header = document.querySelector("header");
+  const footer = document.querySelector("footer");
+
+  // Masquer le contenu du site tant que l'accueil est affiché
+  document.body.classList.add("landing-active");
+  if (main) main.style.display = "none";
+  if (header) header.style.display = "none";
+  if (footer) footer.style.display = "none";
+
+  enterBtn.addEventListener("click", () => {
+    landing.style.opacity = "0";
+    landing.style.pointerEvents = "none";
+    setTimeout(() => {
+      landing.style.display = "none";
+      document.body.classList.remove("landing-active");
+      if (main) main.style.display = "";
+      if (header) header.style.display = "";
+      if (footer) footer.style.display = "";
+    }, 500);
+  });
+
+  // MENU BURGER
   const burger = document.getElementById("burgerBtn");
   const menu = document.getElementById("navLinks");
 
@@ -23,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- FORMULAIRE DE CONTACT ---
+  // FORMULAIRE DE CONTACT
   const contactForm = document.querySelector("#contact form");
   if (contactForm) {
     contactForm.addEventListener("submit", async (e) => {
@@ -57,44 +82,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- ANNÉE DYNAMIQUE ---
+  // ANNÉE DYNAMIQUE
   const yearSpan = document.getElementById("year");
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
   }
 
-  // --- HEADER SCROLL ---
-  const header = document.querySelector(".musician-header");
+  // HEADER SCROLL (masquer sur mobile au scroll vers le bas)
+  const musicianHeader = document.querySelector(".musician-header");
   let lastScrollY = window.scrollY;
 
- window.addEventListener("scroll", () => {
-   const currentScrollY = window.scrollY;
+  window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
 
-   if (currentScrollY > 80) {
-     header.classList.add("scrolled");
-   } else {
-     header.classList.remove("scrolled");
-   }
+    if (currentScrollY > 80) {
+      musicianHeader.classList.add("scrolled");
+    } else {
+      musicianHeader.classList.remove("scrolled");
+    }
 
-   if (
-     currentScrollY > lastScrollY &&
-     currentScrollY > 100 &&
-     window.innerWidth < 900 
-   ) {
-     header.classList.add("hide");
-   } else {
-     header.classList.remove("hide");
-   }
+    if (
+      currentScrollY > lastScrollY &&
+      currentScrollY > 100 &&
+      window.innerWidth < 900
+    ) {
+      musicianHeader.classList.add("hide");
+    } else {
+      musicianHeader.classList.remove("hide");
+    }
 
-   lastScrollY = currentScrollY;
- });
+    lastScrollY = currentScrollY;
+  });
 
-
-  
-
-  // --- ANIMATION APPARITION DES SECTIONS ---
+  // ANIMATION APPARITION SECTIONS
   const sections = document.querySelectorAll(".section-appear");
-  const observer = new window.IntersectionObserver(
+  const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -104,9 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-    {
-      threshold: 0.5, 
-    }
+    { threshold: 0.5 }
   );
 
   sections.forEach((section) => observer.observe(section));

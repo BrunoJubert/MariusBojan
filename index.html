@@ -2,17 +2,34 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MARIUS-BOJAN.FR</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <script src="../public/js/coockieManager.js"></script>
-    <link rel="stylesheet" href="public/styles/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="public/styles/styles.css">
+    <script src="../public/js/coockieManager.js" defer></script>
+    <script src="../public/js/index.js" defer></script>
 </head>
 
 <body>
+    <!-- Accueil dynamique -->
+<div id="landing-page" class="landing-page">
+    <div class="landing-content">
+        <!-- Nouveau : Bienvenue -->
+        <h1 class="welcome-text">Bienvenue</h1>
+
+        <!-- Logo existant -->
+        <div class="logo-accueil">
+            <span class="logo-main-accueil">Marius</span>
+            <span class="logo-sub-accueil">BOJAN</span>
+        </div>
+        <button id="enter-site-btn" class="enter-site-btn">Accéder au site</button>
+    </div>
+</div>
+
+
     <header class="musician-header">
         <nav class="navbar">
             <div class="logo">
@@ -26,7 +43,6 @@
                 <li><a href="#biographie">Biographie</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-
             <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu">
                 <span></span>
                 <span></span>
@@ -35,15 +51,14 @@
         </nav>
     </header>
 
-    <!-- Contenu principal -->
     <main>
         <section id="accueil" class="hero section-appear">
             <h1>Bienvenue</h1>
             <p>Nouvel Album : Origines , Marius Bojan Trio</p>
-            <p>Sortie le 10 Juin 2025, cette pièce vient renouer avec les "Origines" de Marius. 
+            <p>Sortie le 10 Juin 2025, cette pièce vient renouer avec les "Origines" de Marius.
                 L'album est un hommage à la musique traditionnelle et aux racines culturelles de l'artiste.
             </p>
-            <img src="./public/assets/recto.jpg" alt="Album Origines" />
+            <img src="./public/assets/recto.png" alt="Album Origines" />
             <button class="listen-btn">Écouter un extrait</button>
         </section>
 
@@ -120,13 +135,11 @@
             </div>
         </div>
         <p class="copyright">
-            &copy; <span id="year"></span> <a href="https://brunojubert.github.io/portfolio-ide/#contact">BEWVED Tech.</a>
+            &copy; <span id="year"></span> <a href="https://brunojubert.github.io/portfolio-ide/#contact">BEWVED
+                Tech.</a>
             Tous droits réservés.
         </p>
     </footer>
-
-
-    <script src="../public/js/index.js"></script>
 </body>
 
 </html>
