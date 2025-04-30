@@ -576,6 +576,22 @@ body.landing-active {
   color: var(--accent);
 }
 
+.rgpd {
+  display: flex;
+  justify-content: center;
+  
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.rgpd a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.rgpd a:hover {
+  color: var(--text-muted);
+}
+
 @media (max-width: 600px) {
   .footer-content {
     flex-direction: column;

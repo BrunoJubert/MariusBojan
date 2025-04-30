@@ -1,28 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
   // ACCUEIL DYNAMIQUE
-  const landing = document.getElementById("landing-page");
-  const enterBtn = document.getElementById("enter-site-btn");
-  const main = document.querySelector("main");
-  const header = document.querySelector("header");
-  const footer = document.querySelector("footer");
+  // const landing = document.getElementById("landing-page");
+  // const enterBtn = document.getElementById("enter-site-btn");
+  // const main = document.querySelector("main");
+  // const header = document.querySelector("header");
+  // const footer = document.querySelector("footer");
 
-  // Masquer le contenu du site tant que l'accueil est affiché
-  document.body.classList.add("landing-active");
-  if (main) main.style.display = "none";
-  if (header) header.style.display = "none";
-  if (footer) footer.style.display = "none";
+  // document.body.classList.add("landing-active");
+  // if (main) main.style.display = "none";
+  // if (header) header.style.display = "none";
+  // if (footer) footer.style.display = "none";
 
-  enterBtn.addEventListener("click", () => {
-    landing.style.opacity = "0";
-    landing.style.pointerEvents = "none";
-    setTimeout(() => {
-      landing.style.display = "none";
-      document.body.classList.remove("landing-active");
-      if (main) main.style.display = "";
-      if (header) header.style.display = "";
-      if (footer) footer.style.display = "";
-    }, 500);
-  });
+  // enterBtn.addEventListener("click", () => {
+  //   landing.style.opacity = "0";
+  //   landing.style.pointerEvents = "none";
+  //   setTimeout(() => {
+  //     landing.style.display = "none";
+  //     document.body.classList.remove("landing-active");
+  //     if (main) main.style.display = "";
+  //     if (header) header.style.display = "";
+  //     if (footer) footer.style.display = "";
+  //   }, 500);
+  // });
 
   // MENU BURGER
   const burger = document.getElementById("burgerBtn");
