@@ -144,10 +144,10 @@ body.landing-active {
 /* === Gestion des éléments === */
 .welcome-text {
   position: absolute;
-  top: 20%; /* Positionne le titre plus haut, ajuste selon besoin */
+  top: 20%; 
   left: 50%;
   transform: translateX(-50%);
-  font-size: 4rem; /* Taille plus grande */
+  font-size: 4rem; 
   font-weight: 700;
   color: var(--text-light);
   text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
@@ -190,14 +190,14 @@ body.landing-active {
   animation-delay: 2.5s;
   opacity: 0;
   visibility: hidden;
-  pointer-events: none; /* Désactive le clic avant l'animation */
+  pointer-events: none; 
 }
 
 /* Animation d'affichage */
 @keyframes showContent {
   to { 
     visibility: visible;
-    pointer-events: auto; /* Active le clic seulement quand visible */
+    pointer-events: auto; 
   }
 }
 
@@ -457,10 +457,10 @@ body.landing-active {
     animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
   25% {
-    transform: rotate(360deg); /* Rotation complète en 25% du temps */
+    transform: rotate(360deg); 
   }
   100% {
-    transform: rotate(360deg); /* Pause pendant 75% du temps */
+    transform: rotate(360deg); 
   }
 }
 .flip-card {
