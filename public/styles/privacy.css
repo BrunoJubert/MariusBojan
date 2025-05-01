@@ -1,0 +1,100 @@
+/* Variables spécifiques à la page */
+.privacy-main {
+  --privacy-max-width: 900px;
+  --privacy-spacing: 2rem;
+  --privacy-border: 1px solid rgba(39, 100, 146, 0.1);
+}
+
+/* Structure générale */
+.privacy-main {
+  padding: 4rem 4rem;
+  margin: 0 auto;
+  max-width: var(--privacy-max-width);
+  line-height: 1.6;
+  color: var(--primary-darker);
+}
+
+.privacy-hero {
+  margin-top: 20px;  
+  padding: 20px;  
+  text-align: center;
+}
+
+.privacy-hero h1 {
+  font-size: 2.5rem;
+  color: var(--primary-dark);
+  letter-spacing: -0.05em;
+  margin-bottom: 1rem;
+}
+
+/* Contenu */
+.privacy-content {
+  display: grid;
+  gap: var(--privacy-spacing);
+}
+
+.last-update {
+  font-size: 0.9rem;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.privacy-content h2 {
+  font-size: 1.8rem;
+  color: var(--primary-dark);
+  margin-top: 2.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.privacy-content p {
+  margin-bottom: 1rem;
+}
+
+/* Listes */
+.privacy-content ul {
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.privacy-content li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.privacy-content li::before {
+  content: "•";
+  color: var(--gold);
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+}
+
+/* Liens */
+.privacy-content a {
+  color: var(--primary-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.privacy-content a:hover {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .privacy-main {
+    padding: 2rem 1rem;
+  }
+  
+  .privacy-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .privacy-content h2 {
+    font-size: 1.5rem;
+  }
+}
