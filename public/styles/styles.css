@@ -760,7 +760,7 @@ body.landing-active {
   .form-group label {
     margin-left: 12px;
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 0px;
     font-weight: 700;
     width: 400px;
   }
@@ -768,6 +768,11 @@ body.landing-active {
   label {
     font-size: 1rem;
   }
+
+  .form-group {
+    margin-bottom: 6px;
+  }
+
 .landing-content {
     align-items: flex-end;
     justify-content: center;
