@@ -24,7 +24,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Jost', sans-serif;
   box-sizing: border-box;
   scroll-padding-top: 120px;
   scroll-behavior: smooth;
@@ -41,11 +41,11 @@ body {
     url('../assets/marius-accueil.jpg') center center/cover no-repeat;
   z-index: 5000;
   transition: opacity 0.5s;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'DM sans', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* logo + bouton centrés */
+  justify-content: center;
   color: var(--text-light);
 }
 
@@ -216,14 +216,13 @@ body.landing-active {
   left: 0;
   width: 100%;
   min-height: var(--header-height);
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Jost', sans-serif;
   padding: 0;
   z-index: 1000;
   box-sizing: border-box;
   background-image: url('../assets/marius-header4.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: rgba(197, 226, 248, 0.466);
   background-blend-mode: overlay;
 }
 
@@ -244,7 +243,7 @@ body.landing-active {
 
 /* Styles du logo */
 .logo {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Jost', sans-serif;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -316,12 +315,13 @@ body.landing-active {
 }
 
 .nav-links li a {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'DM sans', sans-serif;
   font-weight: 200;
   text-transform: uppercase;
   color: var(--text-light);
   text-decoration: none;
   font-size: 1.1rem;
+  font-weight: 400;
   transition: all var(--transition-speed);
   display: block;
   padding: 10px;
@@ -397,8 +397,9 @@ body.landing-active {
 }
 
 .hero h1 {
+  text-transform: uppercase;
   color: var(--primary-dark);
-  font-size: 2.2rem;
+  font-size: 2rem;
   margin-bottom: 12px;
   letter-spacing: 1px;
 }
@@ -430,10 +431,11 @@ body.landing-active {
 /* Boutons */
 .listen-btn,
 .see-more {
+  font-family: 'Jost', sans-serif;
   background: var(--primary-dark);
   color: var(--text-light);
   border: none;
-  padding: 14px 38px;
+  padding: 10px 38px;
   border-radius: var(--border-radius);
   font-size: 1.1rem;
   cursor: pointer;
