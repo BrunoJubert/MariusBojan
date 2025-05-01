@@ -370,7 +370,7 @@ body.landing-active {
 }
 
 .burger span:nth-child(3) {
-  top: 24px;
+  top: 23px;
 }
 
 .burger.active span:nth-child(1) {
@@ -481,7 +481,6 @@ body.landing-active {
 }
 
 /* Flip au survol ET si class flipped */
-.flip-card:hover .flip-card-inner,
 .flip-card.flipped .flip-card-inner {
   transform: rotateY(180deg);
 }
@@ -796,10 +795,12 @@ body.landing-active {
 
   .logo-main-accueil,
   .logo-sub-accueil {
-    font-size: 2.2rem;
+    font-size: 2.8rem;
   }
 
   .enter-site-btn {
+    text-align: center;
     font-size: 1.2rem;
+    padding: 12px 30px;
   }
 }
