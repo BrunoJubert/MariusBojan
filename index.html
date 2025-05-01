@@ -53,13 +53,29 @@
     <main>
         <section id="accueil" class="hero section-appear">
             <h1>Bienvenue</h1>
-            <p>Nouvel Album : Origines , Marius Bojan Trio</p>
+            <p>Nouvel Album : Origines, Marius Bojan Trio</p>
             <p>Sortie le 10 Juin 2025, cette pièce vient renouer avec les "Origines" de Marius.
                 L'album est un hommage à la musique traditionnelle et aux racines culturelles de l'artiste.
             </p>
-            <img src="./public/assets/recto.png" alt="Album Origines" />
+            <div class="flip-icon-wrapper" aria-hidden="true">
+                <p class="flip-icon-text">Touchez pour voir le dos</p>
+                <i class="fa-solid fa-arrow-rotate-right flip-icon"></i>
+            </div>
+            <div class="flip-card" tabindex="0" aria-label="Pochette d'album cliquable">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="./public/assets/recto.png" alt="Recto Album Origines" />
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="./public/assets/verso.jpg" alt="Verso Album Origines" />
+                    </div>
+                </div>
+            </div>
+        
             <button class="listen-btn">Écouter un extrait</button>
         </section>
+
+
 
         <section id="concerts" class="hero section-appear">
             <h1>Concerts</h1>

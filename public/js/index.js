@@ -46,6 +46,20 @@ document.addEventListener("DOMContentLoaded", () => {
       burger.classList.remove("active");
     });
   }
+  // ANIMATION DES CARDS
+  document.querySelectorAll(".flip-card").forEach((card) => {
+    card.addEventListener("click", () => {
+      card.classList.toggle("flipped");
+    });
+
+    // Accessibilité clavier : flip au Enter ou Espace
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        card.classList.toggle("flipped");
+      }
+    });
+  });
 
   // FORMULAIRE DE CONTACT
   const contactForm = document.querySelector("#contact form");
