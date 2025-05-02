@@ -120,3 +120,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
   sections.forEach((section) => observer.observe(section));
 });
+
+// Détection McAfee + gestion des erreurs
+function checkMcAfeeCompatibility() {
+  try {
+    const isMcAfeeUserAgent = /mcafee/i.test(navigator.userAgent);
+    const hasWebAdvisorEntry = window.performance?.getEntries().some(entry => 
+      /webadvisor/i.test(entry.name)
+    );
+
+    if(isMcAfeeUserAgent || hasWebAdvisorEntry) {
+      console.log('[Compatibility] Mode McAfee détecté');
+      document.cookie = "mcafee_compat=1; Secure; SameSite=Lax; path=/";
+    }
+  } catch (error) {
+    console.error('[Compatibility] Erreur de détection McAfee:', error);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', checkMcAfeeCompatibility);
+
+function checkAdBlock() {
+  const fakeAd = document.createElement('div');
+  fakeAd.className = 'ad-class';
+  document.body.appendChild(fakeAd);
+  
+  setTimeout(() => {
+    const isBlocked = fakeAd.offsetHeight === 0;
+    document.body.removeChild(fakeAd);
+    
+    if(isBlocked) {
+      console.log('[Compatibility] AdBlock détecté');
+      document.cookie = "adblock_detected=1; path=/";
+    }
+  }, 100);
+}
+
+window.addEventListener('load', checkAdBlock);
