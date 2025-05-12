@@ -187,3 +187,12 @@
     bottom: 25px;
   }
 }
+
+@media (display-mode: standalone) {
+  .carousel-caption {
+    bottom: 40px; 
+  }
+  .carousel-indicators {
+    bottom: 24px; 
+  }
+}
