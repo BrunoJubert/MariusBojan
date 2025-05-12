@@ -241,6 +241,48 @@ body {
   margin: 0 auto 20px;
 }
 
+.album-text {
+  font-weight: normal; /* poids normal pour le paragraphe */
+  font-size: 1.1rem;
+}
+
+.album-text strong {
+  font-weight: 700; /* gras */
+  color: var(--primary-dark);
+}
+
+.gold-text {
+  color: var(--gold);
+  font-weight: 600; /* optionnel, un peu plus marqué */
+}
+
+.primary-dark-text {
+  color: var(--primary-dark);
+}
+
+
+.center-text {
+  text-align: center;
+}
+
+
+.hero-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.hero-content {
+  max-width: 480px;
+  text-align: center;
+}
+
+.hero-cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /* Animation apparition */
 .section-appear {
   opacity: 0;
@@ -601,6 +643,57 @@ body {
   .hero p {
     font-size: 1rem;
   }
+
+  .hero-content h1 {
+    text-align: center;
+    margin-bottom: 24px; /* Ajuste l’espacement sous le titre */
+  }
+
+  .hero-content p {
+    text-align: left;
+  }
+
+  .hero-layout {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 64px;
+    text-align: left;
+  }
+  .hero-content {
+    text-align: left;
+    align-items: flex-start;
+    max-width: 480px;
+  }
+  .hero-cover {
+    margin-top: 0;
+  }
+
+  .flip-icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
+  margin: 1rem auto 0.5rem;
+  max-width: min(90vw, 500px);
+}
+
+.flip-icon-text {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: var(--primary-dark);
+  font-weight: 500;
+  text-align: center;
+}
+
+  .btn-center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 16px;
+}
+
 
   .contact-section {
     display: flex;
