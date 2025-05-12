@@ -57,7 +57,7 @@
         <div class="carousel-slide active">
             <img src="./public/assets/marius1.jpg" alt="Écouter un extrait" class="img-slide-1" />
             <div class="carousel-caption">
-                <a class="carousel-btn" href="/ecouter.html">Écouter un extrait</a>
+                <a class="carousel-btn listen-btn" href="#accueil">Écouter un extrait</a>
             </div>
         </div>
         <div class="carousel-slide">
@@ -112,12 +112,17 @@
                 </div>
                 <div class="hero-cover">
                     <div class="flip-card" tabindex="0" aria-label="Pochette d'album cliquable">
-                        <div class="flip-card-inner">
+                        <div class="flip-card-inner" id="flip-card-inner">
                             <div class="flip-card-front">
                                 <img src="./public/assets/recto.jpg" alt="Recto Album Origines" />
                             </div>
                             <div class="flip-card-back">
-                                <img src="./public/assets/verso.jpg" alt="Verso Album Origines" />
+                                <img class="verso-img" src="./public/assets/verso.jpg" alt="Verso Album Origines" />
+                                <div class="cd-audio-wrapper" id="cd-audio-wrapper" style="display:none;">
+                                    <img id="cd-image" src="./public/assets/rondelle.png" alt="CD" />
+                                    <audio id="audio-player" src="./public/assets/Marius Bojan trio - Teaser.mp3"></audio>
+                                    <button id="pause-btn" type="button">Stop</button>
+                                </div>
                             </div>
                         </div>
                     </div>

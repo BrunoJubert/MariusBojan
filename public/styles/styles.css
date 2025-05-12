@@ -396,6 +396,86 @@ body {
   background: var(--gold);
 }
 
+.flip-card-back {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.verso-img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  transition: opacity 0.3s;
+}
+
+/* La rondelle prend toute la place */
+.cd-audio-wrapper {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  background: white; 
+}
+
+#cd-image {
+  display: block;
+  width: 90%;   
+  height: 90%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  margin: auto;
+  pointer-events: none;
+}
+
+@keyframes rotate-cd {
+  to { transform: rotate(360deg); }
+}
+#cd-image.playing {
+  animation: rotate-cd 2s linear infinite;
+}
+
+#pause-btn {
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary-dark);
+  color: var(--text-light);
+  border: none;
+  padding: 8px 22px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: var(--button-shadow);
+  transition: background 0.2s, color 0.2s;
+  z-index: 3;
+}
+#pause-btn:hover {
+  background: var(--gold);
+  color: var(--text-light);
+}
+
+
+.verso-img {
+  transition: opacity 0.3s;
+}
+.cd-audio-wrapper {
+  background: white;
+}
+
+
 /* Formulaire */
 .form-group {
   margin-bottom: 25px;

@@ -119,9 +119,56 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   sections.forEach((section) => observer.observe(section));
+
+  // FLIP-CARD AUDIO & RONDELLE 
+  const listenBtns = document.querySelectorAll(".listen-btn");
+  const flipCard = document.querySelector(".flip-card");
+  const cdAudioWrapper = document.getElementById("cd-audio-wrapper");
+  const audio = document.getElementById("audio-player");
+  const cdImage = document.getElementById("cd-image");
+  const stopBtn = document.getElementById("pause-btn");
+
+  listenBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault(); 
+      document.getElementById("accueil").scrollIntoView({ behavior: "smooth" });
+      flipCard.classList.add("flipped");
+      cdAudioWrapper.style.display = "flex";
+      audio.currentTime = 0;
+      audio.play();
+      stopBtn.textContent = "Stop";
+    });
+  });
+  
+  audio.addEventListener("play", () => {
+    cdImage.classList.remove("playing");
+    void cdImage.offsetWidth; 
+    cdImage.classList.add("playing");
+  });
+
+  cdAudioWrapper.addEventListener("click", (e) => {
+    if (e.target === stopBtn) return;
+    flipCard.classList.add("flipped"); 
+  });
+  
+
+  stopBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); 
+    audio.pause();
+    audio.currentTime = 0;
+    cdImage.classList.remove("playing");
+    cdAudioWrapper.style.display = "none";
+    flipCard.classList.remove("flipped");
+  });
+
+  audio.addEventListener("ended", () => {
+    cdImage.classList.remove("playing");
+    cdAudioWrapper.style.display = "none";
+    flipCard.classList.remove("flipped");
+  });
 });
 
-// Détection McAfee + gestion des erreurs
+
 function checkMcAfeeCompatibility() {
   try {
     const isMcAfeeUserAgent = /mcafee/i.test(navigator.userAgent);
@@ -159,8 +206,7 @@ function checkAdBlock() {
 window.addEventListener('load', checkAdBlock);
 
 //TODO : supprimer le script du mode dev et le remplacer par un script propre en prod
-// Gestion de l'installation de la PWA
-const DEV_MODE = true; // Passe à false en production
+const DEV_MODE = true; 
 let deferredPrompt;
 const installBtn = document.getElementById("installBtn");
 const installText = document.getElementById("install-text");
