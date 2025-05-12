@@ -99,8 +99,8 @@
 
 .carousel-btn:hover,
 .carousel-btn:focus {
-  background: var(--primary-darker);
-  color: var(--gold);
+  background: var(--gold);
+  color: var(--text-light);
   text-decoration: none;
 }
 

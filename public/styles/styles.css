@@ -413,7 +413,7 @@ body {
 .install-btn:hover,
 .install-btn:focus {
   background: var(--gold);
-  color: var(--primary-dark);
+  color: var(--text-light);
 }
 
 #install-container p {
