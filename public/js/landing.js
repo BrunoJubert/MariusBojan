@@ -1,42 +1,68 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Supprime le preload CSS une fois le JS chargé
-  const preload = document.getElementById("landing-preload");
-  if (preload) preload.remove();
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll(".carousel-slide");
+  const indicators = document.querySelectorAll(
+    ".carousel-indicators .indicator"
+  );
+  const carousel = document.getElementById("landing-carousel");
+  let current = 0;
+  let timer = null;
 
-  const landing = document.getElementById("landing-page");
-  if (!landing) return;
-
-  // Cache immédiatement si déjà vu
-  if (sessionStorage.getItem("landingSeen")) {
-    landing.style.display = "none";
-    document.body.classList.remove("landing-active");
-    return;
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === index);
+      indicators[i].classList.toggle("active", i === index);
+    });
+    current = index;
   }
 
-  // Initialise les éléments
-  const enterBtn = document.getElementById("enter-site-btn");
-  const mainElements = ["main", "header", "footer"];
+  function nextSlide() {
+    showSlide((current + 1) % slides.length);
+  }
 
-  // Active le mode landing
-  document.body.classList.add("landing-active");
-  mainElements.forEach((tag) => {
-    const el = document.querySelector(tag);
-    if (el) el.style.display = "none";
+  function prevSlide() {
+    showSlide((current - 1 + slides.length) % slides.length);
+  }
+
+  indicators.forEach((ind, i) => {
+    ind.addEventListener("click", () => {
+      showSlide(i);
+      resetTimer();
+    });
   });
 
-  // Gestion du clic
-  enterBtn.addEventListener("click", () => {
-    sessionStorage.setItem("landingSeen", "true");
-    landing.style.opacity = "0";
-    landing.style.pointerEvents = "none";
+  function resetTimer() {
+    if (timer) clearInterval(timer);
+    timer = setInterval(nextSlide, 7000);
+  }
 
-    setTimeout(() => {
-      landing.style.display = "none";
-      document.body.classList.remove("landing-active");
-      mainElements.forEach((tag) => {
-        const el = document.querySelector(tag);
-        if (el) el.style.display = "";
-      });
-    }, 500);
+  // --- Ajout du swipe tactile ---
+  let startX = null;
+
+  carousel.addEventListener("touchstart", function (e) {
+    if (e.touches.length === 1) {
+      startX = e.touches[0].clientX;
+    }
   });
+
+  carousel.addEventListener("touchend", function (e) {
+    if (startX === null) return;
+    let endX = e.changedTouches[0].clientX;
+    let diffX = endX - startX;
+    if (Math.abs(diffX) > 40) {
+      // seuil de détection du swipe
+      if (diffX < 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+      resetTimer();
+    }
+    startX = null;
+  });
+
+  // Auto défilement
+  timer = setInterval(nextSlide, 7000);
+
+  // Init
+  showSlide(0);
 });

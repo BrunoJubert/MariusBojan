@@ -17,17 +17,8 @@
 </head>
 
 <body>
-    <!-- Accueil dynamique -->
-<div id="landing-page" class="landing-page">
-    <div class="landing-content">
-        <h1 class="welcome-text">Bienvenue</h1>
-        <div class="logo-accueil">
-            <span class="logo-main-accueil">Marius</span>
-            <span class="logo-sub-accueil">BOJAN</span>
-        </div>
-        <button id="enter-site-btn" class="enter-site-btn">Accéder au site</button>
-    </div>
-</div>
+
+
 
 
     <header class="musician-header">
@@ -37,7 +28,7 @@
                 <span class="logo-sub">BOJAN</span>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="/index.html">Accueil</a></li>
+                <li><a href="/index.html#accueil">Accueil</a></li>
                 <li><a href="#concerts">Concerts</a></li>
                 <li><a href="#projets">Projets</a></li>
                 <li><a href="#biographie">Biographie</a></li>
@@ -51,6 +42,36 @@
             </button>
         </nav>
     </header>
+
+    <!-- Carrousel d'accueil -->
+    <section id="landing-carousel" class="landing-carousel">
+        <div class="carousel-slide active">
+            <img src="./public/assets/marius1.jpg" alt="Écouter un extrait" class="img-slide-1" />
+            <div class="carousel-caption">
+                <a class="carousel-btn" href="/ecouter.html">Écouter un extrait</a>
+            </div>
+        </div>
+        <div class="carousel-slide">
+            <img src="./public/assets/marius-concert.JPG" alt="Voir les concerts" class="img-slide-2" />
+            <div class="carousel-caption">
+                <a class="carousel-btn" href="/concerts.html">Voir les concerts</a>
+            </div>
+        </div>
+        <div class="carousel-slide">
+            <img src="./public/assets/marius-bio.JPG" alt="Lire la bio" class="img-slide-3" />
+            <div class="carousel-caption">
+                <a class="carousel-btn" href="/biographie.html">Lire la bio</a>
+            </div>
+        </div>
+        <div class="carousel-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+        </div>
+    </section>
+
+
+
 
     <main>
         <section id="accueil" class="hero section-appear">
