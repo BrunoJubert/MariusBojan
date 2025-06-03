@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
   listenBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       e.preventDefault(); 
-      document.getElementById("accueil").scrollIntoView({ behavior: "smooth" });
+      document.getElementById("listenmusic").scrollIntoView({ behavior: "smooth" });
       flipCard.classList.add("flipped");
       cdAudioWrapper.style.display = "flex";
       audio.currentTime = 0;
