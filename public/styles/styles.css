@@ -507,7 +507,8 @@ body {
   width: 100%;      
   height: auto;
   border-radius: 8px; 
-  margin: 10px;
+  margin: 0px;
+
 }
 
 @media (max-width: 600px) {
@@ -516,6 +517,7 @@ body {
   }
   #imagesPresseWrapper img {
     max-width: 100%; 
+    margin-bottom: 20px;
   }
 }
 
@@ -807,6 +809,15 @@ body {
     color: var(--primary-dark);
     font-weight: 500;
     text-align: center;
+  }
+
+  #imagesPresseWrapper img {
+    max-width: 400px; 
+    width: 100%;      
+    height: auto;
+    border-radius: 8px; 
+    margin: 10px;
+  
   }
 
   .btn-center {
