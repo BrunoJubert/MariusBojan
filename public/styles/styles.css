@@ -768,6 +768,11 @@ body {
     font-size: 1rem;
   }
 
+  .hero img {
+    width: 500px;
+    height: auto;
+  }
+
   .hero-content h1 {
     text-align: center;
     margin-bottom: 24px;
