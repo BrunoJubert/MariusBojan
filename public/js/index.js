@@ -236,4 +236,19 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// Animation de la biographie
+document.addEventListener("DOMContentLoaded", () => {
+  const lireBioBtn = document.getElementById("lireBioBtn");
+  const bioTexte = document.getElementById("bioTexte");
+
+  lireBioBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    lireBioBtn.classList.toggle("active");
+    bioTexte.style.display =
+      bioTexte.style.display === "none" ? "block" : "none";
+    bioTexte.classList.toggle("visible");
+  });
+});
+
+
 

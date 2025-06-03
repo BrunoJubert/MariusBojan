@@ -403,6 +403,15 @@ body {
   transition: transform 0.3s ease;
 }
 
+#bioTexte {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#bioTexte.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .flip-card-back {
   position: relative;
