@@ -237,6 +237,22 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// Animation des projets
+document.addEventListener("DOMContentLoaded", () => {
+  const projetsBtn = document.getElementById("projetsBtn");
+  const projetsVideos = document.getElementById("projetsVideos");
+
+  projetsBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    projetsBtn.classList.toggle("active");
+    projetsVideos.style.display =
+      projetsVideos.style.display === "none" ? "block" : "none";
+    if (projetsVideos.style.display === "block") {
+      // Scroll vers les vidéos
+      projetsVideos.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
+});
 
 
 

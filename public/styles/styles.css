@@ -404,6 +404,24 @@ body {
   transition: transform 0.3s ease;
 }
 
+.video-container {
+  margin: 20px auto;
+  max-width: 100%;
+  position: relative;
+  padding-bottom: 56.25%; /* Format 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
 #bioTexte {
   opacity: 0;
   transform: translateY(15px);
@@ -854,6 +872,15 @@ body {
     color: var(--primary-dark);
     font-weight: 500;
     text-align: center;
+  }
+
+  .video-container {
+    max-width: 800px;
+    padding-bottom: 0;
+    height: 500px; 
+  }
+  .video-container iframe {
+    height: 100%;
   }
 
   #imagesPresseWrapper img {
