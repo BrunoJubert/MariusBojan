@@ -84,20 +84,17 @@ body {
 .logo-main {
   color: var(--gold);
   font-size: 1.9rem;
-  padding: 8px;
+  padding: 8px 0px 8px 8px;
   font-weight: 400;
   line-height: 1;
-  margin-top: 15px;
-  margin-left: 50px;
+  margin-left: 30px;
 }
 
 .logo-sub {
   color: var(--primary-dark);
   font-size: 1.9rem;
-  padding: 8px;
+  padding: 8px 8px 8px 4px;  
   font-weight: 600;
-  line-height: 1;
-  margin-top: 15px;
 }
 
 .logo-main,
