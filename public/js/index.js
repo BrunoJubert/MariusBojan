@@ -174,7 +174,7 @@ audio.addEventListener("ended", () => {
   cdAudioWrapper.style.display = "none";
   flipCard.classList.remove("flipped");
   if (listenBtnAccueil) listenBtnAccueil.textContent = "Écouter un extrait";
-});
+  });
 });
 
 
