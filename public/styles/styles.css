@@ -473,6 +473,33 @@ body {
   background: white;
 }
 
+#imagesPresseWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#imagesPresseWrapper img {
+  max-width: 370px; 
+  width: 100%;      
+  height: auto;
+  border-radius: 8px; 
+  margin: 10px;
+}
+
+@media (max-width: 600px) {
+  #imagesPresseWrapper {
+    flex-direction: column;
+  }
+  #imagesPresseWrapper img {
+    max-width: 100%; 
+  }
+}
+
+
+
+
 /* Formulaire */
 .form-group {
   margin-bottom: 25px;
@@ -514,31 +541,7 @@ body {
   background-size: 12px;
 }
 
-.install-btn {
-  background: var(--primary-dark);
-  color: var(--text-light);
-  border: none;
-  border-radius: 30px;
-  padding: 14px 32px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  margin: 0 auto;
-  box-shadow: var(--button-shadow);
-  transition: background 0.2s, color 0.2s;
-  display: inline-block;
-}
 
-.install-btn:hover,
-.install-btn:focus {
-  background: var(--gold);
-  color: var(--text-light);
-}
-
-#install-container p {
-  font-size: 1rem;
-  color: var(--primary-dark);
-  margin-bottom: 12px;
-}
 
 /* Footer */
 .site-footer {

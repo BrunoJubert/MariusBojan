@@ -167,8 +167,23 @@
                 projets et ses réalisations.
             </p>
             <img src="./public/assets/marius-presse.JPG" alt="Dossier de presse Marius" />
-            <button class="see-more">Consulter</button>
+            <button class="see-more" id="consulterBtn">Consulter</button>
+        
+            <!-- Conteneur pour les images, caché au départ -->
+            <div id="imagesPresse" style="display: none; margin-top: 20px;">
+                <div id="imagesPresseWrapper">
+                    <img src="./public/assets/Plaquette page1.jpg" alt="Dossier de presse 1" />
+                    <img src="./public/assets/Plaquette page2.jpg" alt="Dossier de presse 2" />
+                </div>
+            </div>
+        
+            <a id="telechargerBtn" href="./public/assets/plaquette.pdf" download="Dossier_presse_Marius_Bojan.pdf"
+                style="display: none; margin-top: 20px;" class="see-more">Télécharger en PDF</a>
         </section>
+          
+          
+          
+          
 
 
         <section id="contact" class="contact-section hero section-appear">

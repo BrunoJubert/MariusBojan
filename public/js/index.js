@@ -139,11 +139,10 @@ document.addEventListener("DOMContentLoaded", () => {
       cdAudioWrapper.style.display = "flex";
       audio.currentTime = 0;
       audio.play();
-      // Le bouton du carrousel ne change pas de texte
     });
   }
 
-  // Bouton près du CD : devient "Stop" quand la musique joue
+  // Bouton stop
   if (listenBtnAccueil) {
     listenBtnAccueil.addEventListener("click", (e) => {
       e.preventDefault();
@@ -179,6 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// MacAffee
 function checkMcAfeeCompatibility() {
   try {
     const isMcAfeeUserAgent = /mcafee/i.test(navigator.userAgent);
@@ -214,3 +214,18 @@ function checkAdBlock() {
 }
 
 window.addEventListener("load", checkAdBlock);
+
+// Dossier de presse
+document.addEventListener("DOMContentLoaded", () => {
+  const consulterBtn = document.getElementById("consulterBtn");
+  const imagesPresse = document.getElementById("imagesPresse");
+  const telechargerBtn = document.getElementById("telechargerBtn");
+
+  consulterBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    imagesPresse.style.display = "block";
+    telechargerBtn.style.display = "inline-block"; 
+  });
+});
+
+
