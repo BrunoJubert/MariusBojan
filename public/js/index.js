@@ -120,48 +120,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
   sections.forEach((section) => observer.observe(section));
 
-  const listenBtns = document.querySelectorAll(".listen-btn");
-  const flipCard = document.querySelector(".flip-card");
-  const cdAudioWrapper = document.getElementById("cd-audio-wrapper");
-  const audio = document.getElementById("audio-player");
-  const cdImage = document.getElementById("cd-image");
-  
-  listenBtns.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (btn.textContent === "Stop") {
-        audio.pause();
-        audio.currentTime = 0;
-        cdImage.classList.remove("playing");
-        cdAudioWrapper.style.display = "none";
-        flipCard.classList.remove("flipped");
-        btn.textContent = "Écouter un extrait";
-      } else {
-        // Scroll vers la carte CD, puis lance la musique et affiche la rondelle
-        document.getElementById("listenmusic").scrollIntoView({ behavior: "smooth" });
-        flipCard.classList.add("flipped");
-        cdAudioWrapper.style.display = "flex";
-        audio.currentTime = 0;
-        audio.play();
-        btn.textContent = "Stop";
-      }
-    });
+  const listenBtnCarousel = document.querySelector(".carousel-caption .listen-btn");
+const listenBtnAccueil = document.querySelector(".hero-content .listen-btn"); // ou un id unique
+const flipCard = document.querySelector(".flip-card");
+const cdAudioWrapper = document.getElementById("cd-audio-wrapper");
+const audio = document.getElementById("audio-player");
+const cdImage = document.getElementById("cd-image");
+const listenmusic = document.getElementById("listenmusic");
+
+// Bouton du carrousel : scrolle et lance la musique, mais ne change pas de texte
+if (listenBtnCarousel) {
+  listenBtnCarousel.addEventListener("click", (e) => {
+    e.preventDefault();
+    listenmusic.scrollIntoView({ behavior: "smooth" });
+    flipCard.classList.add("flipped");
+    cdAudioWrapper.style.display = "flex";
+    audio.currentTime = 0;
+    audio.play();
+    // Le bouton du carrousel ne change pas de texte
   });
-  
-  audio.addEventListener("play", () => {
-    cdImage.classList.remove("playing");
-    void cdImage.offsetWidth; // Astuce pour relancer l'animation
-    cdImage.classList.add("playing");
+}
+
+// Bouton près du CD : devient "Stop" quand la musique joue
+if (listenBtnAccueil) {
+  listenBtnAccueil.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (listenBtnAccueil.textContent === "Stop") {
+      audio.pause();
+      audio.currentTime = 0;
+      cdImage.classList.remove("playing");
+      cdAudioWrapper.style.display = "none";
+      flipCard.classList.remove("flipped");
+      listenBtnAccueil.textContent = "Écouter un extrait";
+    } else {
+      flipCard.classList.add("flipped");
+      cdAudioWrapper.style.display = "flex";
+      audio.currentTime = 0;
+      audio.play();
+      listenBtnAccueil.textContent = "Stop";
+    }
   });
-  
-  audio.addEventListener("ended", () => {
-    listenBtns.forEach((btn) => {
-      btn.textContent = "Écouter un extrait";
-    });
-    cdImage.classList.remove("playing");
-    cdAudioWrapper.style.display = "none";
-    flipCard.classList.remove("flipped");
-  });
+}
+
+audio.addEventListener("play", () => {
+  cdImage.classList.remove("playing");
+  void cdImage.offsetWidth;
+  cdImage.classList.add("playing");
+  if (listenBtnAccueil) listenBtnAccueil.textContent = "Stop";
+});
+
+audio.addEventListener("ended", () => {
+  cdImage.classList.remove("playing");
+  cdAudioWrapper.style.display = "none";
+  flipCard.classList.remove("flipped");
+  if (listenBtnAccueil) listenBtnAccueil.textContent = "Écouter un extrait";
+});
 });
 
 
