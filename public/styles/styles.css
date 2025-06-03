@@ -239,6 +239,7 @@ body {
   height: auto;
   display: block;
   margin: 0 auto 20px;
+  border-radius: 20px;
 }
 
 .album-text {

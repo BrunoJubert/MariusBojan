@@ -227,6 +227,8 @@ document.addEventListener("DOMContentLoaded", () => {
       imagesPresse.style.display = "block";
       telechargerBtn.style.display = "inline-block";
       consulterBtn.classList.add("active");
+      // Scroll vers les images de presse
+      imagesPresse.scrollIntoView({ behavior: "smooth", block: "start" });
     } else {
       imagesPresse.style.display = "none";
       telechargerBtn.style.display = "none";
@@ -236,6 +238,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
+
 // Animation de la biographie
 document.addEventListener("DOMContentLoaded", () => {
   const lireBioBtn = document.getElementById("lireBioBtn");
@@ -243,12 +247,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   lireBioBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    lireBioBtn.classList.toggle("active");
-    bioTexte.style.display =
-      bioTexte.style.display === "none" ? "block" : "none";
-    bioTexte.classList.toggle("visible");
+    if (bioTexte.style.display === "none" || !bioTexte.style.display) {
+      bioTexte.style.display = "block";
+      lireBioBtn.classList.add("active");
+      // Scroll vers le texte de la biographie
+      bioTexte.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Optionnel : ajoute la classe pour l’animation
+      setTimeout(() => bioTexte.classList.add("visible"), 10);
+    } else {
+      bioTexte.style.display = "none";
+      lireBioBtn.classList.remove("active");
+      bioTexte.classList.remove("visible");
+    }
   });
 });
+
 
 
 
