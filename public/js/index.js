@@ -237,6 +237,23 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// Animation concerts
+document.addEventListener("DOMContentLoaded", () => {
+  const concertsBtn = document.getElementById("concertsBtn");
+  const concertsCards = document.getElementById("concertsCards");
+
+  concertsBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    concertsBtn.classList.toggle("active");
+    concertsCards.style.display =
+      concertsCards.style.display === "none" ? "block" : "none";
+    if (concertsCards.style.display === "block") {
+      concertsCards.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
+});
+
+
 // Animation des projets
 document.addEventListener("DOMContentLoaded", () => {
   const projetsBtn = document.getElementById("projetsBtn");

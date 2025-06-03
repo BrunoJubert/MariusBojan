@@ -139,8 +139,29 @@
             <h1>Concerts</h1>
             <p>Bientôt en concert près de chez vous</p>
             <img src="./public/assets/marius-concert.JPG" alt="Concerts Marius" />
-            <button class="see-more">Voir les dates</button>
+            <button class="see-more" id="concertsBtn">
+                <span>Voir les dates</span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <!-- Conteneur pour les cartes de concerts -->
+            <div id="concertsCards" style="display: none; margin-top: 30px;">
+                <div class="concerts-grid">
+                    <!-- Exemple de carte -->
+                    <div class="concert-card">
+                        <h3>Paris, Chez Georges</h3>
+                        <p>Vendredi 15 juin 2025<br>20h30</p>
+                        <p>Réservation conseillée</p>
+                    </div>
+                    <div class="concert-card">
+                        <h3>Lyon, Le Monk</h3>
+                        <p>Samedi 22 juin 2025<br>21h00</p>
+                        <p>Ouverture des portes à 20h</p>
+                    </div>
+                    <!-- Ajoute autant de cartes que tu veux -->
+                </div>
+            </div>
         </section>
+          
 
         <section id="projets" class="hero section-appear">
             <h1>Projets</h1>
