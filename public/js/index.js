@@ -223,9 +223,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   consulterBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    imagesPresse.style.display = "block";
-    telechargerBtn.style.display = "inline-block"; 
+    if (imagesPresse.style.display === "none" || !imagesPresse.style.display) {
+      imagesPresse.style.display = "block";
+      telechargerBtn.style.display = "inline-block";
+      consulterBtn.classList.add("active");
+    } else {
+      imagesPresse.style.display = "none";
+      telechargerBtn.style.display = "none";
+      consulterBtn.classList.remove("active");
+    }
   });
 });
+
 
 

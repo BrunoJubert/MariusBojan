@@ -391,6 +391,19 @@ body {
   background: var(--gold);
 }
 
+.see-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.see-more.active i {
+  transform: rotate(90deg);
+}
+.see-more i {
+  transition: transform 0.3s ease;
+}
+
+
 .flip-card-back {
   position: relative;
   width: 100%;
