@@ -414,6 +414,46 @@ body {
   transform: translateY(0);
 }
 
+.bio-text-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  text-align: left;
+}
+
+.bio-text-block {
+  flex: 1 1 45%;
+  min-width: 280px;
+  text-align: left;
+}
+.bio-subtitle {
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-size: 1.2rem;
+  padding-bottom: 8px;
+  text-align: center; 
+  width: 100%;
+}
+
+
+.bio-text-block p {
+  text-align: left; 
+}
+
+@media (max-width: 768px) {
+  .bio-text-container {
+    flex-direction: column;
+  }
+  .bio-text-block {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+}
+
+
 .flip-card-back {
   position: relative;
   width: 100%;
@@ -432,7 +472,6 @@ body {
   transition: opacity 0.3s;
 }
 
-/* La rondelle prend toute la place */
 .cd-audio-wrapper {
   position: absolute;
   cursor: pointer;
