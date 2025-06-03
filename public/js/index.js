@@ -120,97 +120,97 @@ document.addEventListener("DOMContentLoaded", () => {
 
   sections.forEach((section) => observer.observe(section));
 
-  const listenBtnCarousel = document.querySelector(".carousel-caption .listen-btn");
-const listenBtnAccueil = document.querySelector(".hero-content .listen-btn"); // ou un id unique
-const flipCard = document.querySelector(".flip-card");
-const cdAudioWrapper = document.getElementById("cd-audio-wrapper");
-const audio = document.getElementById("audio-player");
-const cdImage = document.getElementById("cd-image");
-const listenmusic = document.getElementById("listenmusic");
+  const listenBtnCarousel = document.querySelector(
+    ".carousel-caption .listen-btn"
+  );
+  const listenBtnAccueil = document.querySelector(".hero-content .listen-btn"); // ou un id unique
+  const flipCard = document.querySelector(".flip-card");
+  const cdAudioWrapper = document.getElementById("cd-audio-wrapper");
+  const audio = document.getElementById("audio-player");
+  const cdImage = document.getElementById("cd-image");
+  const listenmusic = document.getElementById("listenmusic");
 
-// Bouton du carrousel : scrolle et lance la musique, mais ne change pas de texte
-if (listenBtnCarousel) {
-  listenBtnCarousel.addEventListener("click", (e) => {
-    e.preventDefault();
-    listenmusic.scrollIntoView({ behavior: "smooth" });
-    flipCard.classList.add("flipped");
-    cdAudioWrapper.style.display = "flex";
-    audio.currentTime = 0;
-    audio.play();
-    // Le bouton du carrousel ne change pas de texte
-  });
-}
-
-// Bouton près du CD : devient "Stop" quand la musique joue
-if (listenBtnAccueil) {
-  listenBtnAccueil.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (listenBtnAccueil.textContent === "Stop") {
-      audio.pause();
-      audio.currentTime = 0;
-      cdImage.classList.remove("playing");
-      cdAudioWrapper.style.display = "none";
-      flipCard.classList.remove("flipped");
-      listenBtnAccueil.textContent = "Écouter un extrait";
-    } else {
+  // Bouton du carrousel : scrolle et lance la musique, mais ne change pas de texte
+  if (listenBtnCarousel) {
+    listenBtnCarousel.addEventListener("click", (e) => {
+      e.preventDefault();
+      listenmusic.scrollIntoView({ behavior: "smooth" });
       flipCard.classList.add("flipped");
       cdAudioWrapper.style.display = "flex";
       audio.currentTime = 0;
       audio.play();
-      listenBtnAccueil.textContent = "Stop";
-    }
+      // Le bouton du carrousel ne change pas de texte
+    });
+  }
+
+  // Bouton près du CD : devient "Stop" quand la musique joue
+  if (listenBtnAccueil) {
+    listenBtnAccueil.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (listenBtnAccueil.textContent === "Stop") {
+        audio.pause();
+        audio.currentTime = 0;
+        cdImage.classList.remove("playing");
+        cdAudioWrapper.style.display = "none";
+        flipCard.classList.remove("flipped");
+        listenBtnAccueil.textContent = "Écouter un extrait";
+      } else {
+        flipCard.classList.add("flipped");
+        cdAudioWrapper.style.display = "flex";
+        audio.currentTime = 0;
+        audio.play();
+        listenBtnAccueil.textContent = "Stop";
+      }
+    });
+  }
+
+  audio.addEventListener("play", () => {
+    cdImage.classList.remove("playing");
+    void cdImage.offsetWidth;
+    cdImage.classList.add("playing");
+    if (listenBtnAccueil) listenBtnAccueil.textContent = "Stop";
   });
-}
 
-audio.addEventListener("play", () => {
-  cdImage.classList.remove("playing");
-  void cdImage.offsetWidth;
-  cdImage.classList.add("playing");
-  if (listenBtnAccueil) listenBtnAccueil.textContent = "Stop";
-});
-
-audio.addEventListener("ended", () => {
-  cdImage.classList.remove("playing");
-  cdAudioWrapper.style.display = "none";
-  flipCard.classList.remove("flipped");
-  if (listenBtnAccueil) listenBtnAccueil.textContent = "Écouter un extrait";
+  audio.addEventListener("ended", () => {
+    cdImage.classList.remove("playing");
+    cdAudioWrapper.style.display = "none";
+    flipCard.classList.remove("flipped");
+    if (listenBtnAccueil) listenBtnAccueil.textContent = "Écouter un extrait";
   });
 });
-
 
 function checkMcAfeeCompatibility() {
   try {
     const isMcAfeeUserAgent = /mcafee/i.test(navigator.userAgent);
-    const hasWebAdvisorEntry = window.performance?.getEntries().some(entry => 
-      /webadvisor/i.test(entry.name)
-    );
+    const hasWebAdvisorEntry = window.performance
+      ?.getEntries()
+      .some((entry) => /webadvisor/i.test(entry.name));
 
-    if(isMcAfeeUserAgent || hasWebAdvisorEntry) {
-      console.log('[Compatibility] Mode McAfee détecté');
+    if (isMcAfeeUserAgent || hasWebAdvisorEntry) {
+      console.log("[Compatibility] Mode McAfee détecté");
       document.cookie = "mcafee_compat=1; Secure; SameSite=Lax; path=/";
     }
   } catch (error) {
-    console.error('[Compatibility] Erreur de détection McAfee:', error);
+    console.error("[Compatibility] Erreur de détection McAfee:", error);
   }
 }
 
-document.addEventListener('DOMContentLoaded', checkMcAfeeCompatibility);
+document.addEventListener("DOMContentLoaded", checkMcAfeeCompatibility);
 
 function checkAdBlock() {
-  const fakeAd = document.createElement('div');
-  fakeAd.className = 'ad-class';
+  const fakeAd = document.createElement("div");
+  fakeAd.className = "ad-class";
   document.body.appendChild(fakeAd);
-  
+
   setTimeout(() => {
     const isBlocked = fakeAd.offsetHeight === 0;
     document.body.removeChild(fakeAd);
-    
-    if(isBlocked) {
-      console.log('[Compatibility] AdBlock détecté');
+
+    if (isBlocked) {
+      console.log("[Compatibility] AdBlock détecté");
       document.cookie = "adblock_detected=1; path=/";
     }
   }, 100);
 }
 
-window.addEventListener('load', checkAdBlock);
-
+window.addEventListener("load", checkAdBlock);

@@ -24,12 +24,11 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   box-sizing: border-box;
   scroll-padding-top: 120px;
   scroll-behavior: smooth;
 }
-
 
 /* Header */
 .musician-header {
@@ -40,11 +39,11 @@ body {
   left: 0;
   width: 100%;
   min-height: var(--header-height);
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   padding: 0;
   z-index: 1000;
   box-sizing: border-box;
-  background-image: url('../assets/marius-header4.jpg');
+  background-image: url("../assets/marius-header4.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-blend-mode: overlay;
@@ -67,8 +66,7 @@ body {
 
 /* Styles du logo */
 .logo {
-  
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -93,7 +91,7 @@ body {
 .logo-sub {
   color: var(--primary-dark);
   font-size: 1.9rem;
-  padding: 8px 8px 8px 4px;  
+  padding: 8px 8px 8px 4px;
   font-weight: 600;
 }
 
@@ -141,7 +139,7 @@ body {
 }
 
 .nav-links li a {
-  font-family: 'DM sans', sans-serif;
+  font-family: "DM sans", sans-serif;
   font-weight: 200;
   text-transform: uppercase;
   color: var(--text-light);
@@ -262,11 +260,9 @@ body {
   color: var(--primary-dark);
 }
 
-
 .center-text {
   text-align: center;
 }
-
 
 .hero-layout {
   display: flex;
@@ -288,14 +284,13 @@ body {
 /* Animation apparition */
 .section-appear {
   opacity: 0;
-  transition: opacity 0.7s cubic-bezier(.5,.2,.1,1);
+  transition: opacity 0.7s cubic-bezier(0.5, 0.2, 0.1, 1);
   will-change: opacity;
 }
 
 .section-appear.visible {
   opacity: 1;
 }
-
 
 /* Animation icône */
 .flip-icon-wrapper {
@@ -325,10 +320,10 @@ body {
     animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
   25% {
-    transform: rotate(360deg); 
+    transform: rotate(360deg);
   }
   100% {
-    transform: rotate(360deg); 
+    transform: rotate(360deg);
   }
 }
 
@@ -345,7 +340,7 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.8s ease-in-out; 
+  transition: transform 0.8s ease-in-out;
   transform-style: preserve-3d;
 }
 
@@ -360,7 +355,7 @@ body {
   height: 97%;
   backface-visibility: hidden;
   overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
 }
 
@@ -376,12 +371,10 @@ body {
   transform: rotateY(180deg);
 }
 
-
-
 /* Boutons */
 .listen-btn,
 .see-more {
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   background: var(--primary-dark);
   color: var(--text-light);
   border: none;
@@ -407,7 +400,8 @@ body {
 
 .verso-img {
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -419,19 +413,20 @@ body {
 .cd-audio-wrapper {
   position: absolute;
   cursor: pointer;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   display: none;
   align-items: center;
   justify-content: center;
   z-index: 2;
-  background: white; 
+  background: white;
 }
 
 #cd-image {
   display: block;
-  width: 90%;   
+  width: 90%;
   height: 90%;
   max-width: 100%;
   max-height: 100%;
@@ -442,7 +437,9 @@ body {
 }
 
 @keyframes rotate-cd {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 #cd-image.playing {
   animation: rotate-cd 2s linear infinite;
@@ -469,14 +466,12 @@ body {
   color: var(--text-light);
 }
 
-
 .verso-img {
   transition: opacity 0.3s;
 }
 .cd-audio-wrapper {
   background: white;
 }
-
 
 /* Formulaire */
 .form-group {
@@ -513,8 +508,7 @@ body {
 
 .form-group select {
   appearance: none;
-  background-image:
-    url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='292.4'%20height='292.4'%3E%3Cpath%20fill='%23276492'%20d='M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='292.4'%20height='292.4'%3E%3Cpath%20fill='%23276492'%20d='M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 12px center;
   background-size: 12px;
@@ -546,14 +540,13 @@ body {
   margin-bottom: 12px;
 }
 
-
 /* Footer */
 .site-footer {
   background-color: var(--primary-dark);
   color: var(--text-light);
   padding: 20px 20px 60px;
   text-align: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   box-sizing: border-box;
   position: relative;
   z-index: 10;
@@ -616,7 +609,7 @@ body {
   pointer-events: none;
 }
 
-.site-footer>p {
+.site-footer > p {
   margin: 0 auto;
   max-width: 1200px;
   font-size: 0.9rem;
@@ -637,7 +630,7 @@ body {
 .rgpd {
   display: flex;
   justify-content: center;
-  
+
   font-size: 0.8rem;
   color: var(--text-muted);
 }
@@ -670,7 +663,6 @@ body {
 }
 
 @media (min-width: 900px) {
-
   .nav-links {
     display: flex;
     position: static;
@@ -732,7 +724,7 @@ body {
 
   .hero-content h1 {
     text-align: center;
-    margin-bottom: 24px; 
+    margin-bottom: 24px;
   }
 
   .hero-content p {
@@ -756,30 +748,29 @@ body {
   }
 
   .flip-icon-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  text-align: center;
-  margin: 1rem auto 0.5rem;
-  max-width: min(90vw, 500px);
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 1rem auto 0.5rem;
+    max-width: min(90vw, 500px);
+  }
 
-.flip-icon-text {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  color: var(--primary-dark);
-  font-weight: 500;
-  text-align: center;
-}
+  .flip-icon-text {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: var(--primary-dark);
+    font-weight: 500;
+    text-align: center;
+  }
 
   .btn-center {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-top: 16px;
-}
-
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 16px;
+  }
 
   .contact-section {
     display: flex;
