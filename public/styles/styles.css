@@ -67,6 +67,7 @@ body {
 
 /* Styles du logo */
 .logo {
+  
   font-family: 'Jost', sans-serif;
   display: flex;
   flex-direction: row;
@@ -74,6 +75,10 @@ body {
   margin-right: auto;
   padding-left: 0;
   transform: translateY(-3px);
+}
+
+.logo a {
+  text-decoration: none;
 }
 
 .logo-main {
