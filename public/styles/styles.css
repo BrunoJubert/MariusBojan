@@ -651,6 +651,7 @@ body {
   animation-delay: 0.6s;
 }
 
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
@@ -715,14 +716,17 @@ body {
 
 .footer-content {
   max-width: 1200px;
-  margin: 0 auto 20px;
+  margin: 0 auto 32px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
-  gap: 15px;
+  align-items: flex-start;
+  gap: 48px; /* Plus d’espace entre les colonnes */
   position: relative;
+  padding: 24px 0;
 }
+
+
 
 .contact-info {
   flex: 1 1 300px;
@@ -797,11 +801,12 @@ body {
 }
 .rgpd a {
   color: var(--gold);
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .rgpd a:hover {
   color: var(--text-muted);
+  
 }
 
 @media (max-width: 600px) {
@@ -824,6 +829,71 @@ body {
 }
 
 @media (min-width: 900px) {
+
+  .footer-content {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    position: relative;
+  }
+  
+  .footer-col {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .copyright-block {
+    margin-top: 4px;
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    gap: 0.6em; 
+  }
+  
+  .copyright-block .copyright {
+    margin: 0 0 0.3em 0; 
+    font-size: 1rem;
+    color: var(--text-muted);
+  }
+  
+  .copyright-block .rgpd {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-muted);
+  }
+  
+  .copyright-block .rgpd a {
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .copyright-block .rgpd a:hover {
+    color: var(--accent);
+  }
+  
+  .contact-info {
+    align-items: center;
+    text-align: left;
+    justify-content: center;
+    gap: 0.2em;
+  }
+  
+  .social-icons {
+    flex-direction: row;
+    gap: 40px;
+    text-align: left;
+  }
+  
+
+
   .nav-links {
     display: flex;
     position: static;
