@@ -135,13 +135,25 @@ document.addEventListener("DOMContentLoaded", () => {
     listenBtnCarousel.addEventListener("click", (e) => {
       e.preventDefault();
       listenmusic.scrollIntoView({ behavior: "smooth" });
-      flipCard.classList.add("flipped");
       cdAudioWrapper.style.display = "flex";
       audio.currentTime = 0;
       audio.play();
     });
   }
-
+  if (listenBtnCarousel) {
+    listenBtnCarousel.addEventListener("click", (e) => {
+      e.preventDefault();
+      listenmusic.scrollIntoView({ behavior: "smooth" });
+      // Si la pochette est retournée, on la remet côté front
+      if (flipCard.classList.contains("flipped")) {
+        flipCard.classList.remove("flipped");
+      }
+      cdAudioWrapper.style.display = "flex";
+      audio.currentTime = 0;
+      audio.play();
+    });
+  }
+  
   // Bouton stop
   if (listenBtnAccueil) {
     listenBtnAccueil.addEventListener("click", (e) => {
@@ -154,7 +166,10 @@ document.addEventListener("DOMContentLoaded", () => {
         flipCard.classList.remove("flipped");
         listenBtnAccueil.textContent = "Écouter un extrait";
       } else {
-        flipCard.classList.add("flipped");
+        // Si la pochette est retournée, on la remet côté front
+        if (flipCard.classList.contains("flipped")) {
+          flipCard.classList.remove("flipped");
+        }
         cdAudioWrapper.style.display = "flex";
         audio.currentTime = 0;
         audio.play();
@@ -162,6 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+  
 
   audio.addEventListener("play", () => {
     cdImage.classList.remove("playing");

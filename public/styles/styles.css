@@ -357,7 +357,7 @@ body {
   backface-visibility: hidden;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
+  border-radius: 20px;
 }
 
 .flip-card-front img,
@@ -501,7 +501,6 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 2;
-  background: white;
 }
 
 #cd-image {
@@ -511,7 +510,6 @@ body {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  border-radius: 50%;
   margin: auto;
   pointer-events: none;
 }
