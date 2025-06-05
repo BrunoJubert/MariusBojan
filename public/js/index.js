@@ -123,14 +123,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const listenBtnCarousel = document.querySelector(
     ".carousel-caption .listen-btn"
   );
-  const listenBtnAccueil = document.querySelector(".hero-content .listen-btn"); // ou un id unique
+  const listenBtnAccueil = document.querySelector(".hero-content .listen-btn"); 
   const flipCard = document.querySelector(".flip-card");
   const cdAudioWrapper = document.getElementById("cd-audio-wrapper");
   const audio = document.getElementById("audio-player");
   const cdImage = document.getElementById("cd-image");
   const listenmusic = document.getElementById("listenmusic");
 
-  // Bouton du carrousel : scrolle et lance la musique, mais ne change pas de texte
+  // Bouton du carrousel 
   if (listenBtnCarousel) {
     listenBtnCarousel.addEventListener("click", (e) => {
       e.preventDefault();
@@ -144,7 +144,6 @@ document.addEventListener("DOMContentLoaded", () => {
     listenBtnCarousel.addEventListener("click", (e) => {
       e.preventDefault();
       listenmusic.scrollIntoView({ behavior: "smooth" });
-      // Si la pochette est retournée, on la remet côté front
       if (flipCard.classList.contains("flipped")) {
         flipCard.classList.remove("flipped");
       }
@@ -166,7 +165,6 @@ document.addEventListener("DOMContentLoaded", () => {
         flipCard.classList.remove("flipped");
         listenBtnAccueil.textContent = "Écouter un extrait";
       } else {
-        // Si la pochette est retournée, on la remet côté front
         if (flipCard.classList.contains("flipped")) {
           flipCard.classList.remove("flipped");
         }
