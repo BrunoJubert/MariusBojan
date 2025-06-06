@@ -850,6 +850,104 @@ body {
   
 }
 
+.cards-container,
+  .concerts-grid {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+.concerts-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 32px;
+  position: relative;
+  z-index: 2;
+  color: var(--text-light);
+}
+
+.concerts-section {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 0;
+  z-index: 1;
+}
+
+.concerts-parallax-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../assets/marius-concert.JPG');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.concerts-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.726); 
+  z-index: 1;
+}
+
+.concerts-header,
+.cards-container {
+  position: relative;
+  z-index: 2;
+}
+
+.concerts-header {
+  padding-top: var(--header-height);
+  padding-bottom: 32px;
+  text-align: center;
+  color: var(--text-light);
+}
+
+.concerts-title {
+  color: var(--primary-dark);
+  font-size: 2.6rem;
+  letter-spacing: 2px;
+  margin-bottom: 0.5em;
+}
+
+.concerts-subtitle {
+  color: var(--accent);
+  font-size: 1.3rem;
+  margin-bottom: 0;
+}
+
+.goback-btn {
+  display: block;
+  max-width: 240px;
+  margin: 40px auto;
+  background: var(--primary-dark);
+  color: var(--text-light);
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.goback-btn:hover {
+  background: var(--gold);
+  transform: translateY(-2px);
+}
+
 @media (max-width: 600px) {
   .footer-content {
     flex-direction: column;
@@ -870,6 +968,11 @@ body {
 }
 
 @media (min-width: 900px) {
+
+  .concerts-header {
+    padding-top: calc(var(--header-height) * 0.2); /* Ajuste le facteur selon ton besoin */
+    /* ou bien une valeur fixe : padding-top: 80px; */
+  }
 
   .footer-content {
     display: flex;
