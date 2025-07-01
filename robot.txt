@@ -1,0 +1,8 @@
+# robots.txt pour www.mariusbojan.fr
+
+User-agent: *
+Disallow: /politique-de-confidentialite.html
+
+Allow: /
+
+Sitemap: https://www.mariusbojan.fr/sitemap.xml

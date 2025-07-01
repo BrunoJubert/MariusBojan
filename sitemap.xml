@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.mariusbojan.fr/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.mariusbojan.fr/concerts.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mariusbojan.fr/politique-de-confidentialite.html</loc>
+    <priority>0.2</priority>
+  </url>
+  <!-- Ajoute ici d'autres pages si besoin -->
+</urlset>
