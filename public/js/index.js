@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const listenBtnCarousel = document.querySelector(
     ".carousel-caption .listen-btn"
   );
-  const listenBtnAccueil = document.querySelector(".hero-content .listen-btn"); 
+  const listenBtnAccueil = document.querySelector(".btn-center .listen-btn");
   const flipCard = document.querySelector(".flip-card");
   const cdAudioWrapper = document.getElementById("cd-audio-wrapper");
   const audio = document.getElementById("audio-player");

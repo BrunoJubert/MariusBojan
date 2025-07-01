@@ -568,42 +568,51 @@ body {
   transition: opacity 0.3s;
 }
 
-.cd-audio-wrapper {
-  background: transparent;
+.cd-audio-banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0 1.5rem 0;
+  position: relative;
+  z-index: 10;
 }
+
+.cd-audio-wrapper {
+  position: relative;
+  width: min(300px, 70vw); /* Augmenté de 200px à 300px et de 50vw à 70vw */
+  height: min(300px, 70vw); /* Augmenté de 200px à 300px et de 50vw à 70vw */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  background: transparent;
+  border-radius: 50%;
+  overflow: visible;
+}
+
+.cd-audio-wrapper {
+  display: none;
+}
+
 
 .cd-audio-wrapper::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--primary-darker); 
+  background: var(--primary-darker, #222);
   z-index: 1;
-  border-radius: 20px;
+  border-radius: 50%;
   pointer-events: none;
+  opacity: 0.08;
 }
-
-.cd-audio-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-  background: transparent;
-  border-radius: inherit;
-  overflow: hidden;
-}
-
 
 #cd-image {
   display: block;
-  width: 98%;
-  height: 98%;
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  max-width: 280px; 
+  max-height: 280px; 
   object-fit: contain;
   margin: auto;
   pointer-events: none;
@@ -640,6 +649,8 @@ body {
   background: var(--gold);
   color: var(--text-light);
 }
+
+
 
 .verso-img {
   transition: opacity 0.3s;
@@ -1027,9 +1038,22 @@ body {
 @media (min-width: 900px) {
 
   .concerts-header {
-    padding-top: calc(var(--header-height) * 0.2); /* Ajuste le facteur selon ton besoin */
-    /* ou bien une valeur fixe : padding-top: 80px; */
+    padding-top: calc(var(--header-height) * 0.2); 
   }
+
+  .cd-audio-wrapper {
+    position: relative;
+    width: min(400px, 90vw); /* Augmenté de 200px à 300px et de 50vw à 70vw */
+    height: min(400px, 90vw); /* Augmenté de 200px à 300px et de 50vw à 70vw */
+   
+  }
+ #cd-image {
+    width: 100%;
+    height: 100%;
+    max-width: 500px; 
+    max-height: 500px; 
+  }
+
 
   .footer-content {
     display: flex;
