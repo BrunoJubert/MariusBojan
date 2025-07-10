@@ -412,61 +412,6 @@ body {
   background: var(--gold);
 }
 
-/* Bandeau plateformes */
-.platforms-banner {
-  padding: 1.5rem 0;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.platforms-title {
-  color: var(--text-light);
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  letter-spacing: 1px;
-  font-weight: bold;
-}
-
-.platform-logos {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.platform-logos a {
-  color: #ccc;
-  font-size: 2.2rem;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.platform-logos a:hover {
-  color: var(--gold);
-  transform: scale(1.1);
-}
-
-.platform-logos a {
-  font-size: 2.2rem;
-  transition: transform 0.3s ease;
-}
-.platform-logos a:hover {
-  transform: scale(1.1);
-}
-.platform-logos a:nth-child(1) { /* Spotify */
-  color: #1DB954;
-}
-.platform-logos a:nth-child(2) { /* Apple Music */
-  color: #FC3C44;
-}
-.platform-logos a:nth-child(3) { /* Deezer */
-  color: #AA0061;
-}
-.platform-logos a:nth-child(4) { /* Amazon Music */
-  color: #00A8E1;
-}
-.platform-logos a:nth-child(5) { /* YouTube Music */
-  color: #FF0000;
-}
 
 
 .see-more {
