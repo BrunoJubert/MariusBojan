@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // MENU BURGER
+  // --- MENU BURGER ---
   const burger = document.getElementById("burgerBtn");
   const menu = document.getElementById("navLinks");
 
@@ -23,12 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ANIMATION DES CARDS
+  // --- ANIMATION DES CARDS ---
   document.querySelectorAll(".flip-card").forEach((card) => {
     card.addEventListener("click", () => {
       card.classList.toggle("flipped");
     });
-
     card.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
@@ -37,7 +36,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // FORMULAIRE DE CONTACT
+  // --- BOUTON ACHETER L'ALBUM ---
+  const buyBtn = document.getElementById("buy-btn");
+  if (buyBtn) {
+    buyBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // Scroll fluide vers formulaire
+      const contactSection = document.getElementById("contact");
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth" });
+      }
+
+      // Après un délai, sélectionne le sujet dans le formulaire
+      setTimeout(() => {
+        const subjectInput = document.getElementById("subject");
+        if (subjectInput) {
+          subjectInput.value = "Album"; // correspond à la valeur dans ton <select>
+          subjectInput.dispatchEvent(new Event("change", { bubbles: true }));
+        }
+      }, 400);
+    });
+  }
+
+  // --- FORMULAIRE DE CONTACT ---
   const contactForm = document.querySelector("#contact form");
   if (contactForm) {
     contactForm.addEventListener("submit", async (e) => {
@@ -71,13 +93,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ANNÉE DYNAMIQUE
+  // --- ANNÉE DYNAMIQUE ---
   const yearSpan = document.getElementById("year");
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
   }
 
-  // HEADER SCROLL (masquer sur mobile au scroll vers le bas)
+  // --- HEADER SCROLL ---
   const musicianHeader = document.querySelector(".musician-header");
   let lastScrollY = window.scrollY;
 
@@ -103,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
     lastScrollY = currentScrollY;
   });
 
-  // ANIMATION APPARITION SECTIONS
+  // --- ANIMATION APPARITION SECTIONS ---
   const sections = document.querySelectorAll(".section-appear");
   const observer = new IntersectionObserver(
     (entries) => {
@@ -117,9 +139,9 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     { threshold: 0.2 }
   );
-
   sections.forEach((section) => observer.observe(section));
 
+  // --- AUDIO ET BOUTONS ÉCOUTER ---
   const listenBtnCarousel = document.querySelector(
     ".carousel-caption .listen-btn"
   );
@@ -130,16 +152,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const cdImage = document.getElementById("cd-image");
   const listenmusic = document.getElementById("listenmusic");
 
-  // Bouton du carrousel 
-  if (listenBtnCarousel) {
-    listenBtnCarousel.addEventListener("click", (e) => {
-      e.preventDefault();
-      listenmusic.scrollIntoView({ behavior: "smooth" });
-      cdAudioWrapper.style.display = "flex";
-      audio.currentTime = 0;
-      audio.play();
-    });
-  }
   if (listenBtnCarousel) {
     listenBtnCarousel.addEventListener("click", (e) => {
       e.preventDefault();
@@ -152,8 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
       audio.play();
     });
   }
-  
-  // Bouton stop
+
   if (listenBtnAccueil) {
     listenBtnAccueil.addEventListener("click", (e) => {
       e.preventDefault();
@@ -175,7 +186,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-  
 
   audio.addEventListener("play", () => {
     cdImage.classList.remove("playing");
@@ -190,9 +200,83 @@ document.addEventListener("DOMContentLoaded", () => {
     flipCard.classList.remove("flipped");
     if (listenBtnAccueil) listenBtnAccueil.textContent = "Écouter un extrait";
   });
+
+  // --- DOSSIER DE PRESSE ---
+  const consulterBtn = document.getElementById("consulterBtn");
+  const imagesPresse = document.getElementById("imagesPresse");
+  const telechargerBtn = document.getElementById("telechargerBtn");
+
+  if (consulterBtn && imagesPresse && telechargerBtn) {
+    consulterBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (
+        imagesPresse.style.display === "none" ||
+        !imagesPresse.style.display
+      ) {
+        imagesPresse.style.display = "block";
+        telechargerBtn.style.display = "inline-block";
+        consulterBtn.classList.add("active");
+        imagesPresse.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        imagesPresse.style.display = "none";
+        telechargerBtn.style.display = "none";
+        consulterBtn.classList.remove("active");
+      }
+    });
+  }
+
+  // --- ANIMATION CONCERTS ---
+  const concertsBtn = document.getElementById("concertsBtn");
+  const concertsCards = document.getElementById("concertsCards");
+  if (concertsBtn && concertsCards) {
+    concertsBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      concertsBtn.classList.toggle("active");
+      concertsCards.style.display =
+        concertsCards.style.display === "none" ? "block" : "none";
+      if (concertsCards.style.display === "block") {
+        concertsCards.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  }
+
+  // --- ANIMATION PROJETS ---
+  const projetsBtn = document.getElementById("projetsBtn");
+  const projetsVideos = document.getElementById("projetsVideos");
+  if (projetsBtn && projetsVideos) {
+    projetsBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      projetsBtn.classList.toggle("active");
+      projetsVideos.style.display =
+        projetsVideos.style.display === "none" ? "block" : "none";
+      if (projetsVideos.style.display === "block") {
+        projetsVideos.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  }
+
+  // --- ANIMATION BIOGRAPHIE ---
+  const lireBioBtn = document.getElementById("lireBioBtn");
+  const bioTexte = document.getElementById("bioTexte");
+  if (lireBioBtn && bioTexte) {
+    lireBioBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (bioTexte.style.display === "none" || !bioTexte.style.display) {
+        bioTexte.style.display = "block";
+        lireBioBtn.classList.add("active");
+        bioTexte.scrollIntoView({ behavior: "smooth", block: "start" });
+        setTimeout(() => bioTexte.classList.add("visible"), 10);
+      } else {
+        bioTexte.style.display = "none";
+        lireBioBtn.classList.remove("active");
+        bioTexte.classList.remove("visible");
+      }
+    });
+  }
 });
 
-// MacAffee
+// --- Fonctions/utilitaires externes ---
+
 function checkMcAfeeCompatibility() {
   try {
     const isMcAfeeUserAgent = /mcafee/i.test(navigator.userAgent);
@@ -208,7 +292,6 @@ function checkMcAfeeCompatibility() {
     console.error("[Compatibility] Erreur de détection McAfee:", error);
   }
 }
-
 document.addEventListener("DOMContentLoaded", checkMcAfeeCompatibility);
 
 function checkAdBlock() {
@@ -226,89 +309,4 @@ function checkAdBlock() {
     }
   }, 100);
 }
-
 window.addEventListener("load", checkAdBlock);
-
-// Dossier de presse
-document.addEventListener("DOMContentLoaded", () => {
-  const consulterBtn = document.getElementById("consulterBtn");
-  const imagesPresse = document.getElementById("imagesPresse");
-  const telechargerBtn = document.getElementById("telechargerBtn");
-
-  consulterBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (imagesPresse.style.display === "none" || !imagesPresse.style.display) {
-      imagesPresse.style.display = "block";
-      telechargerBtn.style.display = "inline-block";
-      consulterBtn.classList.add("active");
-      // Scroll vers les images de presse
-      imagesPresse.scrollIntoView({ behavior: "smooth", block: "start" });
-    } else {
-      imagesPresse.style.display = "none";
-      telechargerBtn.style.display = "none";
-      consulterBtn.classList.remove("active");
-    }
-  });
-});
-
-// Animation concerts
-document.addEventListener("DOMContentLoaded", () => {
-  const concertsBtn = document.getElementById("concertsBtn");
-  const concertsCards = document.getElementById("concertsCards");
-
-  concertsBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    concertsBtn.classList.toggle("active");
-    concertsCards.style.display =
-      concertsCards.style.display === "none" ? "block" : "none";
-    if (concertsCards.style.display === "block") {
-      concertsCards.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  });
-});
-
-
-// Animation des projets
-document.addEventListener("DOMContentLoaded", () => {
-  const projetsBtn = document.getElementById("projetsBtn");
-  const projetsVideos = document.getElementById("projetsVideos");
-
-  projetsBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    projetsBtn.classList.toggle("active");
-    projetsVideos.style.display =
-      projetsVideos.style.display === "none" ? "block" : "none";
-    if (projetsVideos.style.display === "block") {
-      // Scroll vers les vidéos
-      projetsVideos.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  });
-});
-
-
-
-// Animation de la biographie
-document.addEventListener("DOMContentLoaded", () => {
-  const lireBioBtn = document.getElementById("lireBioBtn");
-  const bioTexte = document.getElementById("bioTexte");
-
-  lireBioBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (bioTexte.style.display === "none" || !bioTexte.style.display) {
-      bioTexte.style.display = "block";
-      lireBioBtn.classList.add("active");
-      // Scroll vers le texte de la biographie
-      bioTexte.scrollIntoView({ behavior: "smooth", block: "start" });
-      // Optionnel : ajoute la classe pour l’animation
-      setTimeout(() => bioTexte.classList.add("visible"), 10);
-    } else {
-      bioTexte.style.display = "none";
-      lireBioBtn.classList.remove("active");
-      bioTexte.classList.remove("visible");
-    }
-  });
-});
-
-
-
-
