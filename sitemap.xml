@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://www.mariusbojan.fr/</loc>
+    <lastmod>2025-09-01</lastmod>
     <priority>1.0</priority>
   </url>
+
   <url>
     <loc>https://www.mariusbojan.fr/concerts.html</loc>
+    <lastmod>2025-08-15</lastmod>
     <priority>0.8</priority>
   </url>
+
+  <url>
+    <loc>https://www.mariusbojan.fr/photos.html</loc>
+    <lastmod>2025-09-02</lastmod>
+    <priority>0.6</priority>
+  </url>
+
   <url>
     <loc>https://www.mariusbojan.fr/politique-de-confidentialite.html</loc>
+    <lastmod>2025-01-20</lastmod>
     <priority>0.2</priority>
   </url>
-  <!-- Ajoute ici d'autres pages si besoin -->
+
 </urlset>
