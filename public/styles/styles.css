@@ -898,7 +898,7 @@ body {
   background-image: url('../assets/marius-concert.JPG');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-repeat: no-repeat;
   z-index: 0;
 }
