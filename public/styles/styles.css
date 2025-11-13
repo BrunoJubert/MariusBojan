@@ -938,6 +938,20 @@ body {
   margin-bottom: 0;
 }
 
+.month-title {
+  grid-column: 1 / -1; /* S'étend sur toute la largeur de la grille */
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-light);
+  background: var(--primary-dark);
+  padding: 12px 0;
+  margin: 24px 0 0 0;
+  border-radius: 8px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+
 .goback-btn {
   display: block;
   max-width: 240px;
