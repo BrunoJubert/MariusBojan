@@ -434,6 +434,12 @@ body {
   transition: transform 0.3s ease;
 }
 
+
+.album-dropdown {
+  margin-top: 20px;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  overflow: hidden;
+}
 .video-container {
   margin: 20px auto;
   max-width: 100%;
@@ -1175,10 +1181,14 @@ body {
     text-align: left;
   }
   .hero-content {
-    text-align: left;
-    align-items: flex-start;
-    max-width: 480px;
-  }
+  max-width: 100%;       /* prend toute la largeur possible */
+  text-align: center;    /* centre le texte et l'image */
+  display: flex;         
+  flex-direction: column;
+  align-items: center;   /* centre tous les enfants horizontalement */
+  gap: 20px;             /* espace entre les éléments */
+  padding: 0 20px;       /* un peu de marge sur les côtés */
+}
   .hero-cover {
     margin-top: 0;
   }
