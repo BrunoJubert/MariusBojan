@@ -6,6 +6,9 @@
   --text-light: #ffffff;
   --text-muted: #e0e0e0;
   --hover-overlay: rgba(255, 255, 255, 0.1);
+  --white: #ffffff;
+  --black: #000000;
+  --cream: #ebd9a9;
 
   /* Dimensions */
   --header-padding: 48px;
@@ -88,8 +91,9 @@
 }
 
 .carousel-btn {
+  font-family: "Cormorant", serif;
   display: inline-block;
-  background: var(--primary-dark);
+  background: var(--black);
   color: var(--text-light);
   border: none;
   padding: 12px 28px;
@@ -110,8 +114,8 @@
 
 .carousel-btn:hover,
 .carousel-btn:focus {
-  background: var(--gold);
-  color: var(--text-light);
+  background: var(--cream);
+  color: var(--black);
   text-decoration: none;
 }
 
@@ -129,7 +133,7 @@
 .carousel-indicators .indicator {
   width: 14px;
   height: 14px;
-  background: var(--primary-dark);
+  background: var(--white);
   border-radius: 50%;
   display: inline-block;
   cursor: pointer;
@@ -138,7 +142,7 @@
 }
 
 .carousel-indicators .indicator.active {
-  background: var(--primary-darker);
+  background: var(--black);
 }
 
 @media (max-width: 700px) {

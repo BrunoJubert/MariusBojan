@@ -1,11 +1,14 @@
 :root {
   /* Couleurs */
-  --primary-dark: #276492;
+  --primary-dark: #ffffff;
   --primary-darker: #16213e;
-  --gold: #c7b453;
+  --gold: #ffffff;
   --text-light: #ffffff;
   --text-muted: #e0e0e0;
   --hover-overlay: rgba(255, 255, 255, 0.1);
+  --white: #ffffff;
+  --black: #000000;
+  --cream: #ebd9a9;
 
   /* Dimensions */
   --header-padding: 48px;
@@ -21,34 +24,36 @@
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 50px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--primary-dark);
+  background: var(--white);
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--gold);
+  background: var(--black);
   border-radius: 10px;
 }
 
 html {
+  font-family: "Cormorant", serif;
   scrollbar-width: thin;
-  scrollbar-color: var(--gold) var(--primary-dark);
+  scrollbar-color: var(--white) var(--black);
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "Jost", sans-serif;
+  font-family: "Cormorant", serif;
   box-sizing: border-box;
   scroll-padding-top: 120px;
   scroll-behavior: smooth;
 }
 
 body { 
-  overflow-x: hidden
+  overflow-x: hidden;
+  background: var(--black);
 }
 /* Header */
 .musician-header {
@@ -59,12 +64,10 @@ body {
   left: 0;
   width: 100%;
   min-height: var(--header-height);
-  font-family: "Jost", sans-serif;
+  font-family: "Cormorant", serif;
   padding: 0;
   z-index: 1000;
   box-sizing: border-box;
-  background-image: url("../assets/marius-header4.jpg");
-  background-size: cover;
   background-repeat: no-repeat;
   background-blend-mode: overlay;
 }
@@ -82,11 +85,15 @@ body {
   padding: 0 40px;
   height: var(--header-height);
   position: relative;
+
+  background-color: rgba(0, 0, 0, 0.6); /* transparence pour voir le flou */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari */
 }
 
 /* Styles du logo */
 .logo {
-  font-family: "Jost", sans-serif;
+  font-family: "Cormorant", serif;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -100,7 +107,7 @@ body {
 }
 
 .logo-main {
-  color: var(--gold);
+  color: var(--white);
   font-size: 1.9rem;
   padding: 8px 0px 8px 8px;
   font-weight: 400;
@@ -109,7 +116,7 @@ body {
 }
 
 .logo-sub {
-  color: var(--primary-dark);
+  color: var(--white);
   font-size: 1.9rem;
   padding: 8px 8px 8px 4px;
   font-weight: 600;
@@ -144,7 +151,7 @@ body {
   position: absolute;
   top: calc(var(--logo-height) + 20px);
   left: 0;
-  background: var(--primary-dark);
+  background: var(--black);
   width: 100%;
   padding: 0;
   list-style: none;
@@ -159,7 +166,7 @@ body {
 }
 
 .nav-links li a {
-  font-family: "DM sans", sans-serif;
+  font-family: "Cormorant", serif;
   font-weight: 200;
   text-transform: uppercase;
   color: var(--text-light);
@@ -192,7 +199,7 @@ body {
 }
 
 .burger span {
-  background: var(--gold);
+  background: var(--white);
   display: block;
   position: absolute;
   height: 4px;
@@ -242,14 +249,14 @@ body {
 
 .hero h1 {
   text-transform: uppercase;
-  color: var(--primary-dark);
+  color: var(--white);
   font-size: 2rem;
   margin-bottom: 12px;
   letter-spacing: 1px;
 }
 
 .hero p {
-  color: var(--primary-darker);
+  color: var(--white);
   font-size: 1.1rem;
   margin-bottom: 28px;
 }
@@ -269,16 +276,16 @@ body {
 
 .album-text strong {
   font-weight: 700; /* gras */
-  color: var(--primary-dark);
+  color: var(--white);
 }
 
 .gold-text {
-  color: var(--gold);
+  color: var(--white);
   font-weight: 600; 
 }
 
 .primary-dark-text {
-  color: var(--primary-dark);
+  color: var(--white);
 }
 
 .center-text {
@@ -322,7 +329,7 @@ body {
 
 .flip-icon {
   font-size: 36px;
-  color: var(--primary-dark);
+  color: var(--white);
   animation: spin-pause 4s infinite;
   display: inline-block;
 }
@@ -395,9 +402,9 @@ body {
 /* Boutons */
 .listen-btn,
 .see-more {
-  font-family: "Jost", sans-serif;
-  background: var(--primary-dark);
-  color: var(--text-light);
+  font-family: "Cormorant", serif;
+  background: var(--white);
+  color: var(--black);
   border: none;
   padding: 10px 38px;
   border-radius: var(--border-radius);
@@ -409,7 +416,7 @@ body {
 
 .listen-btn:hover,
 .see-more:hover {
-  background: var(--gold);
+  background: var(--cream);
 }
 
 
@@ -470,7 +477,7 @@ body {
 }
 .bio-subtitle {
   font-weight: 700;
-  color: var(--primary-dark);
+  color: var(--white);
   margin-top: 1em;
   margin-bottom: 0.5em;
   font-size: 1.2rem;
@@ -621,17 +628,17 @@ body {
   margin-bottom: 1rem;
 }
 .concert-card h3 {
-  color: var(--primary-dark);
+  color: var(--black);
   margin: 0 0 8px 0;
 }
 .site-link {
-  color: var(--primary-dark);
+  color: var(--black);
   text-decoration: none;
   font-weight: 500;
   margin-bottom: 8px;
 }
 .site-link:hover {
-  color: var(--gold);
+  color: var(--black);
   text-decoration: underline;
 }
 .concert-details {
@@ -647,8 +654,8 @@ body {
   line-height: 1.5;
 }
 .call-btn {
-  background: var(--primary-dark);
-  color: var(--text-light);
+  background: var(--black);
+  color: var(--white);
   font-weight: 500;
   padding: 8px 20px;
   border-radius: 30px;
@@ -660,7 +667,8 @@ body {
   margin-right: auto;
 }
 .call-btn:hover {
-  background: var(--gold);
+  background: var(--cream);
+  color: var(--black);
   transform: translateY(-2px);
 }
 
@@ -727,7 +735,7 @@ body {
   padding: 10px;
   font-weight: 700;
   font-size: 1rem;
-  color: var(--primary-darker);
+  color: var(--white);
   width: 100%;
   max-width: 400px;
   box-sizing: border-box;
@@ -758,11 +766,11 @@ body {
 
 /* Footer */
 .site-footer {
-  background-color: var(--primary-dark);
-  color: var(--text-light);
+  background-color: var(--black);
+  color: var(--white);
   padding: 20px 20px 60px;
   text-align: center;
-  font-family: "Roboto", sans-serif;
+  font-family: "Cormorant", serif;
   box-sizing: border-box;
   position: relative;
   z-index: 10;
@@ -792,13 +800,13 @@ body {
 }
 
 .contact-info a {
-  color: var(--gold);
+  color: var(--white);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .contact-info a:hover {
-  color: var(--accent);
+  color: var(--cream);
 }
 
 .social-icons {
@@ -809,7 +817,7 @@ body {
 }
 
 .social-icons a {
-  color: var(--gold);
+  color: var(--white);
   font-size: 1.5rem;
   transition: transform 0.3s ease, color 0.3s ease;
   text-decoration: none;
@@ -820,7 +828,7 @@ body {
 }
 
 .social-icons a:hover {
-  color: var(--accent);
+  color: var(--cream);
   transform: translateY(-3px);
 }
 
@@ -832,18 +840,18 @@ body {
   margin: 0 auto;
   max-width: 1200px;
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: var(--white);
 }
 
 .copyright a {
   margin-top: 20px;
   font-size: 0.8rem;
-  color: var(--gold);
+  color: var(--white);
   text-decoration: none;
 }
 
 .copyright a:hover {
-  color: var(--accent);
+  color: var(--cream);
 }
 
 .rgpd {
@@ -854,12 +862,12 @@ body {
   color: var(--text-muted);
 }
 .rgpd a {
-  color: var(--gold);
+  color: var(--white);
   text-decoration: underline;
 }
 
 .rgpd a:hover {
-  color: var(--text-muted);
+  color: var(--cream);
   
 }
 
@@ -942,8 +950,8 @@ body {
   grid-column: 1 / -1; /* S'étend sur toute la largeur de la grille */
   font-size: 1.6rem;
   font-weight: 600;
-  color: var(--text-light);
-  background: var(--primary-dark);
+  color: var(--black);
+  background: var(--white);
   padding: 12px 0;
   margin: 24px 0 0 0;
   border-radius: 8px;
@@ -956,8 +964,8 @@ body {
   display: block;
   max-width: 240px;
   margin: 40px auto;
-  background: var(--primary-dark);
-  color: var(--text-light);
+  background: var(--black);
+  color: var(--white);
   padding: 12px 24px;
   border-radius: 30px;
   font-size: 1.1rem;
@@ -970,7 +978,8 @@ body {
   gap: 8px;
 }
 .goback-btn:hover {
-  background: var(--gold);
+  background: var(--cream);
+  color: var(--black);
   transform: translateY(-2px);
 }
 
@@ -1055,11 +1064,11 @@ body {
   }
   
   .copyright-block .rgpd a {
-    color: var(--gold);
+    color: var(--white);
     text-decoration: none;
   }
   .copyright-block .rgpd a:hover {
-    color: var(--accent);
+    color: var(--cream);
   }
   
   .contact-info {
@@ -1092,14 +1101,14 @@ body {
   }
 
   .nav-links li a {
-    color: var(--primary-dark);
+    color: var(--white);
     padding: 10px 15px;
     position: relative;
     display: inline-block;
   }
 
   .nav-links li a:hover {
-    color: var(--gold);
+    color: var(--cream);
     background-color: transparent;
   }
 
@@ -1110,7 +1119,7 @@ body {
     left: 15px;
     width: calc(100% - 30px);
     height: 2px;
-    background: var(--gold);
+    background: var(--cream);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
@@ -1136,6 +1145,14 @@ body {
     font-size: 1rem;
   }
 
+  a.white {
+    color: var(--white);
+    text-decoration: underline;
+  }
+
+  a.white:hover {
+    color: var(--cream);
+  }
   .hero img {
     width: 500px;
     height: auto;

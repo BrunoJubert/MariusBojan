@@ -11,7 +11,7 @@
   margin: 0 auto;
   max-width: var(--privacy-max-width);
   line-height: 1.6;
-  color: var(--primary-darker);
+  color: var(--white);
 }
 
 .privacy-hero {
@@ -22,7 +22,7 @@
 
 .privacy-hero h1 {
   font-size: 2.5rem;
-  color: var(--primary-dark);
+  color: var(--white);
   letter-spacing: -0.05em;
   margin-bottom: 1rem;
 }
