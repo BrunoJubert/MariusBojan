@@ -1,0 +1,30 @@
+/* --- Présentation des albums --- */
+.albums-intro {
+    text-align: center;
+    margin: 2rem 0; /* espace au-dessus et en dessous */
+    font-size: 1.2rem;
+    color: var(--white);
+    line-height: 1.5;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem; /* un peu de padding pour mobile */
+}
+
+
+.spotify-listen-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #1DB954; /* vert Spotify */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.spotify-listen-btn:hover {
+    background-color: #1ed760; /* un vert un peu plus clair au hover */
+}
