@@ -11,6 +11,14 @@
     padding: 0 1rem; /* un peu de padding pour mobile */
 }
 
+.separator br{
+    margin: 3rem 0; /* espace au-dessus et en dessous du séparateur */
+    border: none;
+    border-top: 1px solid var(--white); /* ligne blanche */
+    width: 80%; /* largeur de la ligne */
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .spotify-listen-btn {
     display: inline-flex;
